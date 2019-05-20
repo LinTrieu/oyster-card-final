@@ -8,7 +8,8 @@ describe OysterCard do
   end
 
   it 'can get the current balance on the oyster card' do
-    
+    oyster_card = OysterCard.new
+    expect(oyster_card.display_balance).to eq(oyster_card.balance)
   end
 
 end
