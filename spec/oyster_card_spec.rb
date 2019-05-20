@@ -12,4 +12,9 @@ describe OysterCard do
     expect(oyster_card.display_balance).to eq(oyster_card.balance)
   end
 
+  it 'balance can be topped up' do
+    oyster_card = OysterCard.new
+    expect(oyster_card.top_up(100)).to eq(100)
+  end
+
 end

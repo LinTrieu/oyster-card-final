@@ -4,7 +4,8 @@
 **Challenge Instructions
 https://github.com/makersacademy/course/tree/master/oystercard
 
-User stories:
+User stories completed:
+
 ```bash
 In order to use public transport
 As a customer
