@@ -23,6 +23,10 @@ describe OysterCard do
     expect{oyster_card.top_up(1)}.to raise_error "Top up limit exceeded"
   end
 
-  it 
+  it 'can deduct a fare from the card' do
+    oyster_card = OysterCard.new
+    oyster_card.top_up(90)
+    expect(oyster_card.deduct(90)).to eq(oyster_card.balance)
+  end
 
 end
