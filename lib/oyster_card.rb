@@ -21,4 +21,8 @@ class OysterCard
     @balance = @balance - fare
   end
 
+  def touch_in
+    true
+  end
+
 end
