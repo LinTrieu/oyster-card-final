@@ -38,6 +38,4 @@ class OysterCard
     @journey.set_exit(exit_station)
   end
 
-
-
 end
