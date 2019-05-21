@@ -37,7 +37,7 @@ describe OysterCard do
   end
   
   it 'can track whether the user has touched out' do
-    oyster_card.touch_out
+    oyster_card.touch_out(station)
     expect(oyster_card.in_journey).to eq(false)
   end
 
@@ -47,7 +47,7 @@ describe OysterCard do
   end
 
   it 'deducts minimum fare on touch_out' do
-    expect { oyster_card.touch_out }.to change{ oyster_card.balance }.by(-1)
+    expect { oyster_card.touch_out(station) }.to change{ oyster_card.balance }.by(-1)
   end
 
   it 'stores entry_station on touch_in' do
@@ -55,11 +55,18 @@ describe OysterCard do
     expect(oyster_card.entry_station).to eq(station) 
   end
 
-
-  it 'forgets the entry_station on touch_out' do
-    oyster_card.touch_out
-    expect(oyster_card.entry_station).to eq(0)
+  it 'stores the exit_station on touch_out' do
+    oyster_card.touch_out(station)
+    expect(oyster_card.exit_station).to eq(station)
   end
+
+  it 'stores a list_of_journeys' do
+    oyster_card.touch_in(station)
+    oyster_card.touch_out(station)
+    expect(oyster_card.list_of_journeys).to include({entry_station: station, exit_station: station})
+  end
+
+
 
 end
 
