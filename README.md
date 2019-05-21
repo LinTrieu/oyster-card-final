@@ -65,13 +65,9 @@ I need a penalty charge deducted if I fail to touch in or out
 ### Version control:
 
 - Monday:  Lin & Tan 
-
            Exercise 8: Add touch in/out support
-
            https://github.com/LinTrieu/course/blob/master/oystercard/08_touch_in_out.md
 
 - Tuesday: Lin & Kelvin
-
            Exercise 14 (WIP): Handling a journey without a touch out
-
            https://github.com/LinTrieu/course/blob/master/oystercard/14_no_touch_in_or_out.md
