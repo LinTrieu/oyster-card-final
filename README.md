@@ -35,10 +35,7 @@ I need to touch in and out.
 
 ### Version control:
 
-- Monday: Lin & Tan
-          
+- Monday: Lin & Tan 
           Exercise 8: Add touch in/out support
-          
           https://github.com/LinTrieu/course/blob/master/oystercard/08_touch_in_out.md
-
 - Tuesday: Lin & Kelvin
