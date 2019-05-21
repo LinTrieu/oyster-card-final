@@ -55,5 +55,11 @@ describe OysterCard do
     expect(oyster_card.entry_station).to eq(station) 
   end
 
+
+  it 'forgets the entry_station on touch_out' do
+    oyster_card.touch_out
+    expect(oyster_card.entry_station).to eq(0)
+  end
+
 end
 

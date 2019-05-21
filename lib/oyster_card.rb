@@ -33,6 +33,7 @@ class OysterCard
   def touch_out
     @in_journey = false
     @balance -= MINIMUM_FARE
+    @entry_station = 0
   end
 
   def insufficient_funds?
