@@ -31,11 +31,6 @@ describe OysterCard do
     expect(oyster_card.deduct(80)).to eq(oyster_card.balance)
   end
 
-  it 'can track whether the user has touched in and is in journey' do
-    oyster_card.touch_in(station)
-    expect(oyster_card.in_journey).to eq(true) 
-  end
-  
   it 'can track whether the user has touched out' do
     oyster_card.touch_out(station)
     expect(oyster_card.in_journey).to eq(false)
