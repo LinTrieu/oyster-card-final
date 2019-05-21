@@ -31,11 +31,6 @@ describe OysterCard do
     expect(oyster_card.deduct(80)).to eq(oyster_card.balance)
   end
 
-  it 'can track whether the user has touched out' do
-    oyster_card.touch_out(station)
-    expect(oyster_card.in_journey).to eq(false)
-  end
-
   it 'prevents oystercard touch_in with insufficient funds' do
     oyster_card = OysterCard.new
     expect{oyster_card.touch_in(station)}.to raise_error("Insufficient funds for journey")
@@ -45,21 +40,15 @@ describe OysterCard do
     expect { oyster_card.touch_out(station) }.to change{ oyster_card.balance }.by(-1)
   end
 
-  it 'stores entry_station on touch_in' do
-    oyster_card.touch_in(station)
-    expect(oyster_card.entry_station).to eq(station) 
-  end
+  # it 'stores entry_station on touch_in' do
+  #   oyster_card.touch_in(station)
+  #   expect(oyster_card.entry_station).to eq(station) 
+  # end
 
-  it 'stores the exit_station on touch_out' do
-    oyster_card.touch_out(station)
-    expect(oyster_card.exit_station).to eq(station)
-  end
-
-  it 'stores a list_of_journeys' do
-    oyster_card.touch_in(station)
-    oyster_card.touch_out(station)
-    expect(oyster_card.list_of_journeys).to include({entry_station: station, exit_station: station})
-  end
+  # it 'stores the exit_station on touch_out' do
+  #   oyster_card.touch_out(station)
+  #   expect(oyster_card.exit_station).to eq(station)
+  # end
 
 end
 

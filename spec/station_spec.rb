@@ -12,9 +12,6 @@ describe Station do
     expect(station.zone).to eq(1)
   end
 
-
-  def saves_journey
-    @list_of_journeys << {entry_station: @entry_station, exit_station: @exit_station}
-  end
+  
   
 end
