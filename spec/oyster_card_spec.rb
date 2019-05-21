@@ -66,7 +66,5 @@ describe OysterCard do
     expect(oyster_card.list_of_journeys).to include({entry_station: station, exit_station: station})
   end
 
-
-
 end
 
