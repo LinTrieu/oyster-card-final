@@ -34,4 +34,19 @@ describe OysterCard do
     expect(oyster_card.touch_in).to eq(true)
   end
 
+  it 'can track whether the user has touched in' do
+    oyster_card = OysterCard.new
+    expect(oyster_card.touch_in).to be_in_journey 
+  end
+
+  it 'can be touched out' do
+    oyster_card = OysterCard.new
+    expect(oyster_card.touch_out).to eq(true)
+  end
+
+  it 'can track whether the user has touched out' do
+    oyster_card = OysterCard.new
+    oyster_card.touch_in
+    expect(oyster_card.touch_out).not_to be_in_journey 
+  end
 end
