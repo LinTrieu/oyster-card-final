@@ -1,10 +1,9 @@
-### Oyster card
+## Oyster card
 
-
-**Challenge Instructions
+### Challenge Instructions
 https://github.com/makersacademy/course/tree/master/oystercard
 
-User stories completed:
+### User stories completed:
 
 ```bash
 In order to use public transport
@@ -34,9 +33,9 @@ As a customer
 I need to touch in and out.
 ```
 
-Version control:
+### Version control:
+
 - Monday: Lin & Tan
           Exercise 8: Add touch in/out support
           https://github.com/LinTrieu/course/blob/master/oystercard/08_touch_in_out.md
 - Tuesday: Lin & Kelvin
-        
