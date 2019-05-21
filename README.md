@@ -1,7 +1,6 @@
 ## Oyster card
 
-### Challenge Instructions
-https://github.com/makersacademy/course/tree/master/oystercard
+Challenge instructions: https://github.com/makersacademy/course/tree/master/oystercard
 
 ### User stories completed:
 
@@ -21,7 +20,6 @@ In order to protect my money from theft or loss
 As a customer
 I want a maximum limit (of £90) on my card
 ```
-
 ```bash
 In order to pay for my journey
 As a customer
@@ -67,12 +65,13 @@ I need a penalty charge deducted if I fail to touch in or out
 ### Version control:
 
 - Monday:  Lin & Tan 
+
            Exercise 8: Add touch in/out support
+
            https://github.com/LinTrieu/course/blob/master/oystercard/08_touch_in_out.md
 
 - Tuesday: Lin & Kelvin
-           Exercise 14 (WIP): Handling a journey without a touch out
-           https://github.com/LinTrieu/course/blob/master/oystercard/14_no_touch_in_or_out.md
-          
-          The #fare method should return the minimum fare (for the moment), or the penalty fare of 6 if there was either no entry station or no exit station.
 
+           Exercise 14 (WIP): Handling a journey without a touch out
+
+           https://github.com/LinTrieu/course/blob/master/oystercard/14_no_touch_in_or_out.md
