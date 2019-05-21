@@ -2,7 +2,8 @@ require './lib/oyster_card'
 
 describe OysterCard do
 
-  let(:oyster_card) {OysterCard.new}
+  let(:oyster_card)   {OysterCard.new}
+  let(:station)       {double :station}
   
   before do
     oyster_card.top_up(10)
@@ -31,7 +32,7 @@ describe OysterCard do
   end
 
   it 'can track whether the user has touched in and is in journey' do
-    oyster_card.touch_in
+    oyster_card.touch_in(station)
     expect(oyster_card.in_journey).to eq(true) 
   end
   
@@ -42,11 +43,16 @@ describe OysterCard do
 
   it 'prevents oystercard touch_in with insufficient funds' do
     oyster_card = OysterCard.new
-    expect{oyster_card.touch_in}.to raise_error("Insufficient funds for journey")
+    expect{oyster_card.touch_in(station)}.to raise_error("Insufficient funds for journey")
   end
 
   it 'deducts minimum fare on touch_out' do
     expect { oyster_card.touch_out }.to change{ oyster_card.balance }.by(-1)
+  end
+
+  it 'stores entry_station on touch_in' do
+    oyster_card.touch_in(station)
+    expect(oyster_card.entry_station).to eq(station) 
   end
 
 end
