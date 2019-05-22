@@ -37,11 +37,9 @@ describe OysterCard do
   end
 
   it 'deducts minimum fare on touch_out' do
-    expect{oyster_card.touch_out(station)}.to change{oyster_card.balance}.by(-1)
+    oyster_card.touch_in(station)
+    expect{oyster_card.touch_out(station)}.to change{oyster_card.balance}.by(-Journey::MINIMUM_FARE)
   end
 
-  # it 'tracks if oystercard touch_in but no touch_out'
-  # it 'tracks if oystercard touch_out but no touch_in'
-  # it 'deducts a penalty fare if card if not touched in or out'
 end
 

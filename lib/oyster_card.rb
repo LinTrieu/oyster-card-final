@@ -1,14 +1,14 @@
 class OysterCard
 
-  attr_reader :balance , :in_journey
+  attr_reader :balance , :in_journey, :list_of_journeys
 
   DEFAULT_LIMIT = 90
-  MINIMUM_FARE = 1
 
   def initialize(journey = Journey.new)
     @balance = 0
     @journey = journey
     @in_journey = false
+    @list_of_journeys = []
   end
 
   def display_balance
@@ -32,13 +32,18 @@ class OysterCard
   end
 
   def insufficient_funds?
-    @balance < MINIMUM_FARE
+    @balance < Journey::MINIMUM_FARE
   end
-
+  
   def touch_out(exit)
-    @balance -= @journey.fare
     @journey.set_exit(exit)
+    @balance -= @journey.fare
     @in_journey = false
   end
 
+  def saves_journey
+    @list_of_journeys << @journey.journey_hash
+  end
+  
 end
+
