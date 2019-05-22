@@ -5,9 +5,9 @@ class OysterCard
 
   DEFAULT_LIMIT = 90
 
-  def initialize
+  def initialize(journey = Journey.new)
     @balance = 0
-    @journey = Journey.new
+    @journey = journey
     @list_of_journeys = []
   end
 
@@ -44,4 +44,3 @@ class OysterCard
     @list_of_journeys << @journey.journey_hash
   end
 end
-
