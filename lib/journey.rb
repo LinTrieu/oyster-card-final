@@ -1,9 +1,11 @@
 class Journey
 
-  attr_reader :list_of_journeys, :entry_station , :exit_station
+  attr_reader :list_of_journeys, :entry_station , :exit_station , :fare , :complete
+
+  PENALTY_FARE = 6
+  MINIMUM_FARE = 1
 
   def initialize
-
     @list_of_journeys = []
   end
 
@@ -13,12 +15,19 @@ class Journey
 
   def set_entry(entry_station)
     @entry_station = entry_station
-    @in_journey = true
   end
 
   def set_exit(exit_station)
     @exit_station = exit_station
-    @in_journey = false
     saves_journey
   end
+
+  def complete?
+    @in_journey == false
+  end
+
+  # def fare
+  #   !entry_station.nil? && !exit_station.nil? MINIMUM_FARE : PENALTY_FARE
+  # end
+
 end

@@ -4,7 +4,6 @@ class OysterCard
 
   DEFAULT_LIMIT = 90
   MINIMUM_FARE = 1
-  PENALTY_FARE = 6
 
   def initialize(journey = Journey.new)
     @balance = 0
@@ -26,9 +25,9 @@ class OysterCard
     @balance -= money
   end
 
-  def touch_in(entry_station)
+  def touch_in(entry)
     fail "Insufficient funds for journey" if insufficient_funds?
-    @journey.set_entry(entry_station)
+    @journey.set_entry(entry)
     @in_journey = true
   end
 
@@ -36,9 +35,9 @@ class OysterCard
     @balance < MINIMUM_FARE
   end
 
-  def touch_out(exit_station)
-    @balance -= MINIMUM_FARE
-    @journey.set_exit(exit_station)
+  def touch_out(exit)
+    @balance -= @journey.fare
+    @journey.set_exit(exit)
     @in_journey = false
   end
 
