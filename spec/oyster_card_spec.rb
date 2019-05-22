@@ -37,18 +37,11 @@ describe OysterCard do
   end
 
   it 'deducts minimum fare on touch_out' do
-    expect { oyster_card.touch_out(station) }.to change{ oyster_card.balance }.by(-1)
+    expect{oyster_card.touch_out(station)}.to change{oyster_card.balance}.by(-1)
   end
 
-  # it 'stores entry_station on touch_in' do
-  #   oyster_card.touch_in(station)
-  #   expect(oyster_card.entry_station).to eq(station) 
-  # end
-
-  # it 'stores the exit_station on touch_out' do
-  #   oyster_card.touch_out(station)
-  #   expect(oyster_card.exit_station).to eq(station)
-  # end
-
+  # it 'tracks if oystercard touch_in but no touch_out'
+  # it 'tracks if oystercard touch_out but no touch_in'
+  # it 'deducts a penalty fare if card if not touched in or out'
 end
 
