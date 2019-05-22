@@ -16,7 +16,7 @@ class OysterCard
   end
 
   def top_up(money)
-    raise "Top up limit exceeded" if @balance + money > DEFAULT_LIMIT
+    fail "Top up limit exceeded" if @balance + money > DEFAULT_LIMIT
     @balance += money
   end
 
