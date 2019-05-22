@@ -11,7 +11,4 @@ describe Station do
   it 'returns zone of station' do
     expect(station.zone).to eq(1)
   end
-
-  
-  
 end
