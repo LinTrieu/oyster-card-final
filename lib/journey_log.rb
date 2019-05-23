@@ -18,7 +18,7 @@ class JourneyLog
   private
   
   def current_journey(journey = Journey.new)
-    index = @journeys.count - 1
-    @journeys[index].complete? ? @journeys.push(journey) : @journeys[index]
+    # index = @journeys.count - 1
+    @journey.last.complete? ? @journeys.push(journey) : @journeys[index]
   end
 end

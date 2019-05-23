@@ -4,22 +4,22 @@ describe Journey do
   let(:journey)   {Journey.new}
   let(:station)   {double(:station)}
 
-  it 'by default is incomplete' do  
+  it 'by default is an incomplete journey' do  
     expect(journey).not_to be_complete
   end
 
-  it 'knows if a journey is complete (tap in and tap out)' do
+  it 'knows if it is complete' do
     journey.set_entry(station)
     journey.set_exit(station)
     expect(journey).to be_complete
   end
 
-  it 'knows if a journey is incomplete (tap out only)' do  
+  it 'knows if it is incomplete (tap out only)' do  
     journey.set_exit(station)
     expect(journey).not_to be_complete
   end
 
-  it 'knows if a journey is incomplete (tap in only)' do  
+  it 'knows if it is incomplete (tap in only)' do  
     journey.set_entry(station)
     expect(journey).not_to be_complete
   end

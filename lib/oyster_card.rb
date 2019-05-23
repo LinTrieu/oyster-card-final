@@ -26,6 +26,7 @@ class OysterCard
 
   def touch_in(entry)
     fail "Insufficient funds for journey" if insufficient_funds?
+    complete_journey unless @journey.complete?
     @journey = Journey.new
     @journey.set_entry(entry)
   end
@@ -36,8 +37,12 @@ class OysterCard
   
   def touch_out(exit)
     @journey.set_exit(exit)
-    deduct
+    complete_journey
+  end
+
+  def complete_journey
     saves_journey
+    deduct
   end
 
   def saves_journey
