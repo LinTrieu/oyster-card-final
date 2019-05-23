@@ -1,6 +1,5 @@
-# This records the entry station and exit station of a journey
+# This records the entry and exit station of a journey, and calculates its price
 class Journey
-
   attr_reader :entry_station , :exit_station
 
   PENALTY_FARE = 6
@@ -16,9 +15,7 @@ class Journey
 
   def crossed_zones
     (@entry_station.zone - @exit_station.zone).abs
-
   end
-
 
   def journey_hash
     { entry_station: @entry_station, exit_station: @exit_station }

@@ -6,19 +6,16 @@ class JourneyLog
   end
 
   def start(station)
-    index = @journeys.count - 1
-    @journeys[index].set_entry(station)
+    @journeys.last.set_entry(station)
   end
 
   def finish(station)
-    index = @journeys.count - 1
-    @journeys[index].set_exit(station)
+    @journeys.last.set_exit(station)
   end
  
   private
   
   def current_journey(journey = Journey.new)
-    # index = @journeys.count - 1
     @journey.last.complete? ? @journeys.push(journey) : @journeys[index]
   end
 end

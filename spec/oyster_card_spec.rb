@@ -1,7 +1,6 @@
 require './lib/oyster_card'
 
 describe OysterCard do
-
   let(:oyster_card)   {OysterCard.new}
   let(:station)       {double(:station_bow, zone: 2, name: "Bow")}
   
