@@ -4,13 +4,13 @@ require 'oyster_card'
 
     subject     { OysterCard.new }
     let(:bow)   { Station.new("Bow", 2) }
-    let(:bank)   { Station.new("Bank", 2) }
+    let(:bank)   { Station.new("Bank", 1) }
 
 
     it 'taps into Bow and taps out of Bank' do
       subject.top_up(10)
       subject.touch_in(bow)
-      expect{subject.touch_out(bank)}.to change{subject.balance}.by(-1)
+      expect{subject.touch_out(bank)}.to change{subject.balance}.by(-2)
     end 
 
     it 'taps into Bow and taps into Bank' do

@@ -7,8 +7,18 @@ class Journey
   MINIMUM_FARE = 1
 
   def fare
-    complete? ? MINIMUM_FARE : PENALTY_FARE
+    complete? ? valid_journey_fare : PENALTY_FARE
   end
+
+  def valid_journey_fare
+    crossed_zones + MINIMUM_FARE  
+  end
+
+  def crossed_zones
+    (@entry_station.zone - @exit_station.zone).abs
+
+  end
+
 
   def journey_hash
     { entry_station: @entry_station, exit_station: @exit_station }
